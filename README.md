@@ -1,10 +1,10 @@
-# ECD-NEXUS 3.0
+# ECD-Nexus-Agentic-AI-Based-Infant-Health-Monitoring-System
 
 An Agentic Multimodal AI Framework for Infant Cry, Respiratory, Cardiac, and Motor Analysis.
 
 ## Overview
 
-ECD-NEXUS 3.0 is a multimodal AI system that analyzes infant cry audio and movement video to generate explainable health-related insights. The project combines machine learning, pose estimation, clinical reasoning, and LLM-based report generation into a unified pipeline.
+ECD-Nexus 3.0 is a multimodal AI system that analyzes infant cry audio and movement video to generate explainable health-related insights. The project combines machine learning, pose estimation, clinical reasoning, and LLM-based report generation into a unified pipeline for early health assessment and decision support.
 
 The system performs:
 - Infant cry analysis
@@ -24,6 +24,7 @@ The system performs:
 - Llama-3 via Groq API
 - Streamlit
 - Pandas / NumPy / Scikit-learn
+- Matplotlib / Seaborn
 
 ## Datasets Used
 
@@ -46,46 +47,56 @@ Input Audio/Video
 ## Models Used
 
 | Model | Algorithm |
+|---|---|
 | Cry Classification | XGBoost |
 | Respiratory Analysis | XGBoost |
 | Cardiac Analysis | XGBoost |
 | Movement Analysis | MediaPipe Pose |
-| Report Generation | Llama-3 |
+| Report Generation | Llama-3 / Groq |
 
 ## Main Files
 
-- `extract_features.py` – Audio feature extraction
-- `train_all_models.py` – Model training
-- `synthetic_atlas.py` – Clinical reasoning rules
-- `inference_v3.py` – Prediction pipeline
-- `agents.py` – Multi-agent orchestration
+- `extract_features.py` – Audio feature extraction and dataset preprocessing
+- `train_all_models.py` – Model training and evaluation pipeline
+- `synthetic_atlas.py` – Clinical reasoning rules and explainability logic
+- `inference_v3.py` – Prediction and report generation pipeline
 - `app_v3.py` – Streamlit frontend
 
 ## Installation
 
 ```bash
 pip install pandas numpy scikit-learn xgboost librosa
-pip install streamlit mediapipe matplotlib
+pip install streamlit mediapipe matplotlib seaborn
 pip install langchain langchain-groq groq
-````
+```
 
 ## Run Project
+
 ```bash
 python extract_features.py
-python extract_features.py
+python train_all_models.py
 streamlit run app_v3.py
 ```
+
 ## Groq API
+
 Groq API is used to access the Llama-3 model for explainable report generation.
-Get API key from:
-[https://groq.com/](https://groq.com/)
+Get an API key from: [https://groq.com/](https://groq.com/)
 
 ## Features
-* Multimodal AI pipeline
-* Explainable AI using clinical atlas
-* LangChain-based agentic architecture
-* Decision-level fusion
-* Real-time Streamlit interface
-* 
+
+- Multimodal AI pipeline
+- Explainable AI using clinical atlas
+- LangChain-based agentic architecture
+- Decision-level fusion
+- Real-time Streamlit interface
+- AI-assisted clinical decision support
+
 ## License
+
 Developed for educational and research purposes.
+
+## Summary
+
+AI, Multi-Agent Systems, Machine Learning • Developed an AI-powered multi-agent system to analyze infant cry, respiratory, and cardiac signals for early health assessment. Integrated intelligent signal processing and machine learning to provide accurate, real-time clinical decision support.
+
